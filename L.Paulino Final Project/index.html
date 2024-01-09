@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Figure Skating Lesson</title>
+         <style>
+            h1{color:whitesmoke; text-align: center; font-family: cursive; font-size: 70px; background-color: #66a3ff;}
+            body{background-color: black;}
+            marquee{color:white; font-size: 30px; font-family: inherit;}
+            p{color:white; font-size: 40px; background-color: #66a3ff;}
+            a{color:white; font-size: 25; font-family: serif;}
+            a:hover{
+                background-color: #000099;
+            }
+        </style>
+        <script>
+            var imgArray = new Array(4);
+            var index = 0;
+            function cycle(){
+                document.banner.src = imgArray[index].src;
+                index++;
+                if(index > 3){
+                    index = 0;
+                }
+                setTimeout("cycle()", 2000);
+                return;
+            }
+            function images(){
+                imgArray[0] = new Image;
+                imgArray[0].src = "29832b3bb16da2883144731982fa4edf.gif";
+                imgArray[1] = new Image;
+                imgArray[1].src = "dc56ceef2ad1001c62f82eb43643d0fd3a7951de_hq.gif";
+                imgArray[2] = new Image;
+                imgArray[2].src = "giphy.gif";
+                imgArray[3] = new Image;
+                imgArray[3].src = "KPez.gif";
+                cycle();
+                return;
+            }
+        </script>
+    </head>
+    <body onLoad = "images()">
+        <h1 id="top">Figure Skating Lessons</h1>
+        <marquee>We Offer Lessons For Everyone!</marquee>
+        <hr>
+        <div align = "center">
+            <img name = "banner" src ="29832b3bb16da2883144731982fa4edf.gif" >
+        </div>    
+        
+        <h1 id="p" style="text-align: center; font-size: 60px;">Preschool Star Sessions</h1>
+        
+        <table style="background-color: #66a3ff;" width="1430px">
+            <tr><td><img src ="skateimage.jpg" alt="Photo of young girl practicing balance on ice skates" width="510" height="500" style="padding: 20px" ></td><td><p style="font-size: 35px"> Introduce your little ones to the magic of figure skating with our specially designed Preschool Star Lessons! Tailored for <a>children ages 3-5</a>, our program offers both group and one-on-one sessions, ensuring a personalized approach to their skating journey. In our group lessons, priced at <a>$120 per session</a>, with a <a>$10 registration fee</a>, and <a>$5 for skate rentals</a>, children will flourish in the presence of fellow preschoolers as they embark on a fun-filled adventure of balance, coordination, and basic skating skills. Engaging activities like red light green light, duck duck goose, and tag add an element of excitement to each session. For a more individualized experience, our one-on-one lessons, priced at <a>$180 per session</a>, with a <a>$20 registration fee</a>, and <a>$15 for skate rentals</a>, provide focused attention to enhance your child's skating abilities. Safety is our top priority, and during lessons, children are equipped with protective gear, including helmets, and padded knee and elbow pads. Join us as we create a foundation of joy and confidence on the ice for your preschool star. Watch as they glide into a world of fun. Enroll your little one today for a magical start to their skating journey! Sign up by filling out our <a href="form.html">form</a>!</p>
+        </td></tr>
+        </table>
+        <h1 style="text-align: left"><img src ="Step2.jpg" alt="Group of children practicing balance" width="310" height="300" style="padding: 20px"> <img src="skate.jpg" alt="Group of children gliding while balancing on one skate"width="310" height="300" style="padding: 20px"><img src="things-ice-skate2.jpg"alt="Group of children gliding on ice" width="310" height="300" style="padding: 20px"><img src="iStock-462946973.jpg" alt="Two little girls posing on the ice rink"width="310" height="300" style="padding: 20px"></h1><br>
+        
+        <h1 id="sa" style="text-align: center; font-size: 60px;">School-age Star Sessions</h1>
+        
+        <table style="background-color: #66a3ff;" width="1430px">
+            <tr><td><img src ="LTS_group_class_6.jpg" alt="Group of children following an instructors direction" width="510" height="500" style="padding: 20px"></td><td><p style="font-size: 35px"> Unlock the world of skating for your school-age star! Our dynamic sessions, priced at <a>$150 per session</a>, <a>$15 registration fee</a>, and <a>$10 skate rentals</a>, cater to <a>ages 6-12</a>. These engaging lessons focus on building confidence, refining skills, and fostering a love for the ice. From basic techniques to exciting group activities, your child will embark on a thrilling journey to becoming a confident and skilled young skater. Sign up by filling out our <a href="form.html">form</a>!</p>
+                
+        </td></tr>
+        </table>
+        
+        <h1 style="text-align: left"><img src ="find%20a%20club_0.jpg" alt="Group of children skating in a circle"width="310" height="300" style="padding: 20px"> <img src="learn_skate_lessons_w_instructor_web.jpg" alt="Group of children practicing with instructor" width="310" height="300" style="padding: 20px"><img src="darcy%20adjusted.jpg" alt="Child skating with instructor"width="310" height="300" style="padding: 20px"><img src="LTS_group_class_1.jpg" alt="Group of children posing on the ice" width="310" height="300" style="padding: 20px"></h1><br>
+        
+        <h1 id="t" style="text-align: center; font-size: 60px;">Teenage Star Sessions</h1>
+        
+        <table style="background-color: #66a3ff;" width="1430px">
+            <tr><td><img src ="skatedownloadimage.jpg" width="510" height="500" style="padding: 20px"></td><td><p style="font-size: 35px"> Ignite the passion for figure skating in your teenager with our dedicated Teen Star Sessions! Priced at <a>$170 per session</a>, with a <a>$20 registration fee</a>, and <a>$15 skate rentals</a>, these lessons are tailored for <a>ages 13-17</a>. Our expert instructors guide teens through advanced techniques, artistic expression, and performance skills. Join us for a perfect blend of challenge and fun as your teen glides into a world of self-discovery on the ice. Sign up by filling out our <a href="form.html">form</a>!</p>
+                
+        </td></tr>
+        </table>
+        
+        <h1 style="text-align: left"><img src ="NY-Skating-Coaches-1620x1080-1.jpg" alt="Teen practicing balance with instructor" width="310" height="300" style="padding: 20px"> <img src="Teenskate.jpg" alt="Group of teens parcticing balance with instructor"width="310" height="300" style="padding: 20px"><img src="GN3NM7FOQAI6NDYZEGQ4MXJAIM.jpg" alt="Group of teens practicing on the ice with instructor" width="310" height="300" style="padding: 20px"><img src="e6066e071170565002c608dcc180bffc.jpg" alt="Group of teens skating together" width="310" height="300" style="padding: 20px"></h1><br>
+        
+        <h1 id="a" style="text-align: center; font-size: 60px;">Adult Star Sessions</h1>
+        
+        <table style="background-color: #66a3ff;" width="1430px">
+            <tr><td><img src ="rs=w_600,h_600,cg_true.jpg" alt="Adult woman practicing balance with instructor" width="510" height="500" style="padding: 20px"></td><td><p style="font-size: 35px"> Rediscover the joy of skating with our Adult Star Sessions! Priced at <a>$180 per session</a>, including a <a>$25 registration fee</a> and <a>$20 for skate rentals</a>, these lessons are tailored for adults <a>aged 18-45</a>. Whether you're a beginner or looking to enhance your skills, our instructors will guide you through a program that emphasizes technique, flexibility, and artistic expression. Embrace the thrill of skating and join our supportive community of adult learners on the ice. Sign up by filling out our <a href="form.html">form</a>!</p>
+                
+        </td></tr>
+        </table>
+        
+        <h1 style="text-align: left"><img src ="ltsadult.jpg" alt="Group of adults practicing balance" width="310" height="300" style="padding: 20px"> <img src="URBAN-articleLarge.jpg" alt="Group of adults practicing balance with instructor" width="310" height="300" style="padding: 20px"><img src="rs-adult-learn-to-skate.jpg" alt="Group of adults practicing balance with instructor"width="310" height="300" style="padding: 20px"><img src="Adultskaters.jpg" alt="Group of adults practicing balance with instructor" width="310" height="300" style="padding: 20px"></h1><br>
+        
+        <h1 id="s" style="text-align: center; font-size: 60px;">Senior Star Sessions</h1>
+        
+        <table style="background-color: #66a3ff;" width="1430px">
+            <tr><td><img src ="im-488353.jpg" alt="Group of seniors skating together in unison" width="510" height="500" style="padding: 20px"></td><td><p style="font-size: 35px"> Age is no limit to the joy of figure skating! Our Senior Star Sessions, priced at <a>$70 per session</a>, with a <a>$5 registration fee</a> and <a>$10 skate rentals</a>, are designed for individuals <a>aged 46-73</a>. These sessions focus on balance, flexibility, and graceful movements. Join us for a blend of companionship and skill-building as you glide into the world of figure skating. It's never too late to embrace the magic of the ice and experience the joy of skating at any stage in life. Sign up by filling out our <a href="form.html">form</a>!</p>
+                
+        </td></tr>
+        </table>
+        
+        <h1 style="text-align: left"><img src ="web1_ice-skate_020215ev_006_2.jpg" alt="Senior woman following instructors directions" width="310" height="300" style="padding: 20px"> <img src="B3-DY662_WORKOU_8SR_20190509164607.jpg" alt="Senior woman posing on the ice rink" width="310" height="300" style="padding: 20px"><img src="resized_99261-adgfitskate12xx-009_4-17890_t800.jpg" alt="Senior couple gliding on ice" width="310" height="300" style="padding: 20px"><img src="web1_ice-skate_020215ev_011_2.jpg" alt="Senior man gliding on ice" width="310" height="300" style="padding: 20px"></h1><br>
+    
+        <h1 style="text-align: center; font-size: 60px;">About Us</h1>
+        <p>Step onto the ice and let the magic of figure skating unfold before you! Our immersive figure skating lessons are crafted to cater enthusiasts of all ages. At our rink, age is just a number; the ice becomes a canvas where anyone can glide, twirl, and leap into the captivating world of figure skating. Whether you're a beginner or looking to refine your skills, our expert instructors are dedicated to ensuring a supportive and enjoyable environment for all. Embark on a journey of elegance, grace, and skill, as we invite you to discover the joy of figure skating. Passion knows no age on the enchanting surface of the ice! Lace up, embrace the cold, and let your skating story begin!</p>
+        <a href="#top"style="color:white; font-size: 30px; font-family: cursive;">Go to the top of the page!</a><br><br>
+        <a href="#s"style="color:white; font-size: 30px; font-family: cursive;">Go to Senior Star Sessions!</a><br><br>
+        <a href="#a"style="color:white; font-size: 30px; font-family: cursive;">Go to Adult Star Sessions!</a><br><br>
+        <a href="#t"style="color:white; font-size: 30px; font-family: cursive;">Go to Teenage Star Sessions!</a><br><br>
+        <a href="#sa"style="color:white; font-size: 30px; font-family: cursive;">Go to School-age Star Sessions!</a><br><br>
+        <a href="#p"style="color:white; font-size: 30px; font-family: cursive;">Go to Preschool Star Sessions!</a>
+    </body>
+</html>

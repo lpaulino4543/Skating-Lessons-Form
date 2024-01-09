@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Figure Skating Session Form</title>
+     <style>
+            body{background-color: #66a3ff;}
+            h1{color:white; text-align: center; font-family: cursive; font-size: 80px; }
+            h2{color: white; font-family: cursive; font-size: 45px;}
+            h4{color: white; font-family: cursive; font-size: 27px;}
+            
+        </style>
+    <script>
+         function doClear(){
+                
+                document.form.fname.value = "";
+                document.form.lname.value = "";
+                document.form.address.value = "";
+                document.form.city.value = "";
+                document.form.state.value = "";
+                document.form.zip.value = "";
+                document.form.phone.value = "";
+                document.form.email.value = "";
+                document.form.cname.value = "";
+                document.form.cnumber.value = "";
+                document.form.cvv.value = "";
+             
+                
+                document.form.gender[0].checked = false;
+                document.form.gender[1].checked = false;
+                document.form.gender[2].checked = false;
+                document.form.payment.checked = false;
+               
+        
+                document.form.month.value = "defu";
+                document.form.day.value = "d0";
+                document.form.year.value = "y0";
+                document.form.m.value = "m0";
+                document.form.yr.value = "0";
+                
+                document.form.efname.value = "";
+                document.form.elname.value = "";
+                document.form.ephone.value = "";
+                
+                var sesCheck = document.getElementsByName('session');
+                for (var i=0; i<sesCheck.length; i++){
+                    sesCheck[i].checked = false;
+                }
+                
+                var whyCheck = document.getElementsByName('why');
+                for (var i=0; i<whyCheck.length; i++){
+                    whyCheck[i].checked = false;
+                }
+                
+                document.form.message.value = "";
+            
+             
+                return;
+            }
+        
+         function doSubmit(){
+             
+                if (validateStep1() == false){
+                alert("Required data missing in Step 1");
+                    return false;
+                
+                }
+                if (validateStep2() == false){
+                    alert("Required data missing in Step 2");
+                    return false;
+                }
+                
+                if (validateStep3() == false){
+                    alert("Required data missing in Step 3");
+                    return false;
+                }
+                
+               if (validateStep4() == false){
+                    alert("Required data missing in Step 4");
+                    return false;
+                }
+                
+               if (validateStep5() == false){
+                    alert("Required data missing in Step 5");
+                    return false;
+                }
+                   alert("Your figure skating session has been submitted.");
+                   
+                
+                return true;
+            
+            }
+        
+          function validateStep1(){
+          
+              var first = document.form.fname.value;
+          if (first ==""){
+              alert("Please Enter Your First Name");
+              document.form.fname.focus();
+              return false;
+          }
+          if(!isNaN(first)){
+              alert("Please enter only characters for your first name");
+              document.form.fname.select();
+              return false;
+          }
+          if ((first.length < 5 ) || (first.length > 15)){
+              alert("Your first name must be 5 to 15 characters");
+              document.form.fname.select();
+              return false;
+          }
+          
+          var last = document.form.lname.value;
+          if (last ==""){
+              alert("Please enter your last name");
+              document.form.lname.focus();
+              return false;
+          }
+          if(!isNaN(last)){
+              alert("Please enter only characters for your last name");
+              document.form.lname.select();
+              return false;
+          }
+          if ((last.length < 5 ) || (last.length > 15)){
+              alert("Your last name must be 5 to 15 characters");
+              document.form.lname.select();
+              return false;
+          }
+          
+          var add = document.form.address.value;
+          if (add ==""){
+              alert("Please enter your address");
+              document.form.address.focus();
+              return false;
+          }
+          if ((add.length < 6 ) || (add.length > 30)){
+              alert("Your address must be 10 to 30 characters");
+              document.form.address.select();
+              return false;
+          }
+          
+          var city = document.form.city.value;
+          if (city ==""){
+              alert("Please enter your city of residence");
+              document.form.city.focus();
+              return false;
+          }
+          
+          if(!isNaN(city)){
+              alert("Please enter only characters for your city of residence");
+              document.form.city.select();
+              return false;
+          }
+          
+          var state = document.form.state.value;
+          if (state ==""){
+              alert("Please enter your state of residence");
+              document.form.state.focus();
+              return false;
+          }
+          if ((state.length < 2) || (state.length > 2)){
+              alert("Enter a valid state");
+              document.form.state.select();
+              return false;
+          }
+          if(!isNaN(state)){
+              alert("Please enter only characters for your state of residence");
+              document.form.city.select();
+              return false;
+          }
+          
+           var zip = document.form.zip.value;
+          if (zip ==""){
+              alert("Please enter your zip code");
+              document.form.zip.focus();
+              return false;
+          }
+          if ((zip.length < 5) || (zip.length > 5)){
+              alert("Enter a valid zip code");
+              document.form.zip.select();
+              return false;
+          }
+          if(isNaN(zip)){
+              alert("Please enter a valid zip code (Like this: 12034)");
+              document.form.zip.select();
+              return false;
+          }
+          
+          var phone = document.form.phone.value;
+          if (phone ==""){
+              alert("Please enter your phone number");
+              document.form.phone.focus();
+              return false;
+          }
+          if (isNaN(phone)){
+              alert("Enter a valid phone number (Like this : 907-234139405)");
+              document.form.phone.focus();
+              return false;
+          }
+          
+          var email = document.form.email.value;
+          if (email == ""){
+              alert("Please enter your email");
+              document.form.email.focus();
+              return false;
+          }
+          if (email.indexOf("@", 0) < 0){
+              alert("Please enter a valid e-mail address (Like this: johnsmith123@aol.com)");
+              document.form.email.focus();
+              return false;
+          }
+          if (email.indexOf(".", 0) < 0){
+              alert("Please enter a valid e-mail address. (Like this: johnsmith123@aol.com)");
+              document.form.email.focus();
+              return false;
+          }
+          return true;
+      }
+        
+        function validateStep2(){
+            
+            if (document.form.month.value == "defu"){
+                alert("Please select a birth month");
+                return false;
+            }
+            
+            if (document.form.day.value == "d0"){
+                alert("Please select a birth day");
+                return false;
+            }
+            
+            if (document.form.year.value == "y0"){
+                alert("Please select a birth year");
+                return false;
+            }
+            
+            if ((form.gender[0].checked == false) && (form.gender[1].checked == false) &&(form.gender[2].checked == false)){
+                alert("Please choose your Gender: Femal, Male, Or Other");
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function validateStep3(){
+            var firstname = document.form.efname.value;
+          if (firstname ==""){
+              alert("Please enter your emergency contact's first Name");
+              document.form.efname.focus();
+              return false;
+          }
+          if(!isNaN(firstname)){
+              alert("Please enter only characters for your emergency contact's first name");
+              document.form.efname.select();
+              return false;
+          }
+          if ((firstname.length < 5 ) || (firstname.length > 15)){
+              alert("Your emergency contact's first name must be 5 to 15 characters");
+              document.form.efname.select();
+              return false;
+          }
+          
+          var lastname = document.form.elname.value;
+          if (lastname ==""){
+              alert("Please enter your emergency contact's last name");
+              document.form.elname.focus();
+              return false;
+          }
+          if(!isNaN(lastname)){
+              alert("Please enter only characters for your emergency contact's last name");
+              document.form.elname.select();
+              return false;
+          }
+          if ((lastname.length < 5 ) || (lastname.length > 15)){
+              alert("Your emergency contact's last name must be 5 to 15 characters");
+              document.form.elname.select();
+              return false;
+          }
+        
+          var phoneNo = document.form.ephone.value;
+          if (phoneNo ==""){
+              alert("Please enter your emergency contact's phone number");
+              document.form.ephone.focus();
+              return false;
+          }
+          if (isNaN(phoneNo)){
+              alert("Enter a valid phone number (Like this : 907-234139405)");
+              document.form.ephone.focus();
+              return false;
+          }
+            return true;
+        }
+        
+        function validateStep4(){
+            var ses = document.form.session.value;
+            if (ses == ""){
+                alert("Please select your desired session.");
+                document.form.session.focus();
+                return false;
+            }
+            var why = document.form.why;
+                for (var i=0; i < why.length; i++){
+                    if (why[i].checked)
+                        break;
+                }
+            if (i == why.length)
+                return alert("Please select the reason why you would like to book a session.");
+                
+
+            return true;
+        }
+        
+
+        function validateStep5(){
+             if (form.payment.checked == false){
+                alert("Please select your payment method.");
+                return false;
+            }
+            var cardholder = document.form.cname.value;
+          if (cardholder ==""){
+              alert("Please enter the name found on the front side of your card.");
+              document.form.cname.focus();
+              return false;
+          }
+          if(!isNaN(cardholder)){
+              alert("Please enter only characters for the name on your card.");
+              document.form.cname.select();
+              return false;
+          }
+            var cardNum = document.form.cnumber.value;
+          if (cardNum ==""){
+              alert("Please enter the digits found on the front side of your card.");
+              document.form.cnumber.focus();
+              return false;
+          }
+          if(isNaN(cardNum)){
+              alert("Please enter only digits for the card number.");
+              document.form.cnumber.select();
+              return false;
+          }
+          
+            if (document.form.m.value == "00"){
+                alert("Please select the expiration month found on the front side of your card.");
+                return false;
+            }
+            
+            if (document.form.yr.value == "0"){
+                alert("Please select the expiration year found on the front side of your card.");
+                return false;
+            }
+            
+            var cvv = document.form.cvv.value;
+          if (cvv ==""){
+              alert("Please enter your cvv number found on the back side of your card.");
+              document.form.cvv.focus();
+              return false;
+          }
+            if ((cvv.length < 3 ) || (cvv.length > 3)){
+              alert("Your CCV/CVC/CID must be 3 digits.");
+              document.form.cvv.select();
+              return false;
+          }
+            if(isNaN(cvv)){
+              alert("Please enter only digits for your CCV/CVC/CID.");
+              document.form.cvv.select();
+              return false;
+          }
+          
+            return;
+        }
+        
+    </script>
+    </head>
+    <body>
+        <form name = "form">
+            <h1 style="text-align: center">Figure Skating Session Form</h1>
+            <hr>
+            <br><br>
+            <h2>Step 1:</h2><br>
+        <p><h4>Please Enter: Your First Name &amp; Last Name</h4>
+            <font face = "Monospace">
+            First Name: <input name="fname" size="50"
+            type = "text">
+            Last Name: <input name="lname" size="50" type="text">
+            </font>
+         </p>
+        <p><h4>Please Enter: Address, City, State, and Zip</h4>
+            <font face = "Monospace">
+            Address: &nbsp; &nbsp;<input name="address" size="50" type="text">
+            City: &nbsp; &nbsp; &nbsp;<input name="city" size="16" type="text">
+            State: <input name="state" size="2" type="TEXT">
+            Zip: <input name="zip" size="5" type="text"><br>
+            </font>
+         </p>
+        <p><h4>Please Enter:Phone Number &amp; E-mail</h4>
+            <font face = "Monospace">
+            Phone No: &nbsp;&nbsp;<input name="phone" size="50" type="text">
+            E-mail: &nbsp;&nbsp;&nbsp;<input name="email" size="50" type="text"><br>
+            </font>
+         </p><br>
+        
+        <h2>Step 2:</h2><br>
+
+        <p><h4>Date Of Birth </h4>
+        <table>
+            <tr>
+                <td>
+        <font face = "Monospace">
+            <select name="month">
+                <option value="defu">Choose a month</option>
+                <option value="jan">January</option>
+                <option value="feb">Febuary</option>
+                <option value="mar">March</option>
+                <option value="apr">April</option>
+                <option value="may">May</option>
+                <option value="jun">June</option>
+                <option value="jul">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">October</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+            </select>
+            <p style="font-family: monospace; font-size: 11px;">Month</p>
+            </td>
+            <td>
+            <select name="day">
+                <option value="d0">Choose a day</option>
+                <option value="d1">1</option>
+                <option value="d2">2</option>
+                <option value="d3">3</option>
+                <option value="d4">4</option>
+                <option value="d5">5</option>
+                <option value="d6">6</option>
+                <option value="d7">7</option>
+                <option value="d8">8</option>
+                <option value="d9">9</option>
+                <option value="d10">10</option>
+                <option value="d11">11</option>
+                <option value="d12">12</option>
+                <option value="d13">13</option>
+                <option value="d14">14</option>
+                <option value="d15">15</option>
+                <option value="d16">16</option>
+                <option value="d17">17</option>
+                <option value="d18">18</option>
+                <option value="d19">19</option>
+                <option value="d20">20</option>
+                <option value="d21">21</option>
+                <option value="d22">22</option>
+                <option value="d23">23</option>
+                <option value="d24">24</option>
+                <option value="d25">25</option>
+                <option value="d26">26</option>
+                <option value="d27">27</option>
+                <option value="d28">28</option>
+                <option value="d29">29</option>
+                <option value="d30">30</option>
+                <option value="d31">31</option>
+            </select>
+                <p style="font-family: monospace; font-size: 11px;">Day</p></td>
+            <td>
+               <select name="year">
+                <option value="y0">Choose a year</option>
+                <option value="y1">2020</option>
+                <option value="y2">2019</option>
+                <option value="y3">2018</option>
+                <option value="y4">2017</option>
+                <option value="y5">2016</option>
+                <option value="y6">2015</option>
+                <option value="y7">2014</option>
+                <option value="y8">2013</option>
+                <option value="y9">2012</option>
+                <option value="y10">2011</option>
+                <option value="y11">2010</option>
+                <option value="y12">2009</option>
+                <option value="y13">2008</option>
+                <option value="y14">2007</option>
+                <option value="y15">2006</option>
+                <option value="y16">2005</option>
+                <option value="y17">2004</option>
+                <option value="y18">2003</option>
+                <option value="y19">2002</option>
+                <option value="y20">2001</option>
+                <option value="y21">2000</option>
+                <option value="y22">1999</option>
+                <option value="y23">1998</option>
+                <option value="y24">1997</option>
+                <option value="y25">1996</option>
+                <option value="y26">1995</option>
+                <option value="y27">1994</option>
+                <option value="y28">1993</option>
+                <option value="y29">1992</option>
+                <option value="y30">1991</option>
+                <option value="y31">1990</option>
+                <option value="y32">1989</option>
+                <option value="y33">1988</option>
+                <option value="y34">1987</option>
+                <option value="y35">1986</option>
+                <option value="y36">1985</option>
+                <option value="y37">1984</option>
+                <option value="y38">1983</option>
+                <option value="y39">1982</option>
+                <option value="y40">1981</option>
+                <option value="y41">1980</option>
+                <option value="y42">1979</option>
+                <option value="y43">1978</option>
+                <option value="y44">1977</option>
+                <option value="y45">1976</option>
+                <option value="y46">1975</option>
+                <option value="y47">1974</option>
+                <option value="y48">1973</option>
+                <option value="y49">1972</option>
+                <option value="y50">1971</option>
+                <option value="y51">1970</option>
+                <option value="y52">1969</option>
+                <option value="y53">1968</option>
+                <option value="y54">1967</option>
+                <option value="y55">1966</option>
+                <option value="y56">1965</option>
+                <option value="y57">1964</option>
+                <option value="y58">1963</option>
+                <option value="y59">1962</option>
+                <option value="y60">1961</option>
+                <option value="y61">1960</option>
+                <option value="y62">1959</option>
+                <option value="y63">1958</option>
+                <option value="y64">1957</option>
+                <option value="y65">1956</option>
+                <option value="y66">1955</option>
+                <option value="y67">1954</option>
+                <option value="y68">1953</option>
+                <option value="y69">1952</option>
+                <option value="y70">1951</option>
+                <option value="y71">1950</option>
+            </select>
+            <p style="font-family: monospace; font-size: 11px;">Year</p>     
+            </td>
+            </tr>
+        </font>
+        </table>
+        </p>
+    
+        <p><h4>Select Your Gender</h4>
+        <font face = "Monospace">
+            <input name="gender" type="radio" value="female">Female
+            <input name="gender" type="radio" value="male">Male
+            <input name="gender" type="radio" value="other">Other<br>
+        </font>
+        </p>
+        
+
+
+        <h2>Step 3:</h2><br>
+
+        <p><h4>Emergency Contact Information</h4>
+            <font face = "Monospace">
+            First Name: <input name="efname" size="50"
+            type = "text">
+            Last Name: <input name="elname" size="50" type="text">
+            <br><br>
+            Phone No: &nbsp;&nbsp;<input name="ephone" size="50" type="text">
+            </font>
+         </p><br>
+
+        <h2>Step 4:</h2><br>
+
+        <p><h4>Select Your Desired Session</h4>
+        <font face = "Monospace">
+            <input name="session" type="radio">Preschool Star Solo Session<br><br> 
+            <input name="session" type="radio">Preschool Star Group Session<br><br>
+            <input name="session" type="radio">School-age Star Solo Session<br><br> 
+            <input name="session" type="radio">School-age Star Group Session<br><br>
+            <input name="session" type="radio">Teen Star Solo Session<br><br> 
+            <input name="session" type="radio">Teen Star Group Session<br><br>
+            <input name="session" type="radio">Adult Star Solo Session<br><br> 
+            <input name="session" type="radio">Adult Star Group Session<br><br>
+            <input name="session" type="radio">Senior Star Solo Session<br><br> 
+            <input name="session" type="radio">Senior Star Group Session<br><br> 
+        </font><br><br>
+        
+        <p><h4>Why Are You Booking a Session?</h4>
+        <font face = "Monospace">
+            <input name="why" type="checkbox">I want to get fit<br><br> 
+            <input name="why" type="checkbox">It's a great after school activity for the kids<br><br> 
+            <input name="why" type="checkbox">I want to get back into skating<br><br>
+            <input name="why" type="checkbox">I want to learn a new Hobby<br><br> 
+            <input name="why" type="checkbox">I want to compete in competitions<br><br> 
+            <input name="why" type="checkbox">I want to be a better skater<br><br>
+            <input name="decline" type="checkbox">I Decline to Answer 
+        </font><br><br>
+        
+        <h4>If you have any questions or comments please leave your written response below:</h4>
+        <textarea name="message" rows="20" cols="120">
+        </textarea><br><br>
+        
+        <h2>Step 5:</h2><br>
+
+        <p><h4>Select Your Desired Payment Method</h4>
+        <font face = "Monospace">
+            <input name="payment" type="radio">Pay with Visa, Mastercard, Discover, and American Express<br><br> 
+            Cardholder Name: <input name="cname" size="50"
+            type = "text">
+            Card Number: <input name="cnumber" size="50" type="text"><br><br>
+            <table>
+            <tr>
+                <td>
+        <font face = "Monospace">
+            <select name="m">
+                <option value="m0">Select a month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <p style="font-family: monospace; font-size: 11px;">Month</p>
+            </td>
+            <td>
+               <select name="yr">
+                <option value="0">Select a year</option>
+                <option value="1">2023</option>
+                <option value="2">2024</option>
+                <option value="3">2025</option>
+                <option value="4">2026</option>
+                <option value="5">2027</option>
+                <option value="6">2028</option>
+                <option value="7">2029</option>
+                <option value="8">2030</option>
+                <option value="9">2031</option>
+                <option value="10">2032</option>
+                <option value="11">2033</option>
+                <option value="12">2034</option>
+                <option value="13">2035</option>
+                <option value="14">2036</option>
+                <option value="15">2037</option>
+                <option value="16">2038</option>
+                <option value="17">2039</option>
+                <option value="18">2040</option>  
+            </select>
+            <p style="font-family: monospace; font-size: 11px;">Year</p>     
+            </td>
+            </tr>
+        </font>
+        </table>
+            CVV/ CVC/ CID: <input name="cvv" size="5"
+            type = "text"><br><br>
+        </font><br><br>
+        
+        <input type="button" value="Submit Order" onClick="doSubmit()">
+        <input type="button" value="Clear Entries" onClick="doClear()"><br><br>
+        <p style="color: white; font-family: cursive; font-size: 25px;">Visit our main page <a href = "index.html">here</a>!</p>
+        </form>
+    </body>
+</html>
